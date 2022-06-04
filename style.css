@@ -15,6 +15,7 @@
 ********************/
 .header {
   background-color: #2196f3;
+  margin-bottom: 48px;
 }
 .nav {
   display: flex;
@@ -23,27 +24,73 @@
 }
 .nav__link {
   padding: 23px;
+
+  transition: 0.2s linear background-color;
 }
 .link {
   color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 150%;
   text-align: center;
+  transition: 0.2s linear color, 0.2s linear background-color;
+}
+.link:hover {
+  color: #fff;
+  background-color: #1e88e5;
 }
 /*All Cats
 ********************/
 .cats__collection {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 225px);
+  grid-template-columns: repeat(auto-fill, 255px);
   gap: 48px;
+  justify-content: center;
 }
 .cats {
+  position: relative;
+
+  background-color: #fff;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s linear;
+}
+.cats__inner {
   width: 225px;
   height: 225px;
+  cursor: pointer;
+}
+.hearth {
+  position: absolute;
 
-  margin-right: 48px;
+  left: 76.33%;
+  right: 8.33%;
+  top: 77.5%;
+  bottom: 11.04%;
+  display: none;
+  z-index: 2;
+  transition: 0.2s linear;
+}
+.hearth__two {
+  position: absolute;
+  left: 76.33%;
+  right: 8.33%;
+  top: 77.5%;
+  bottom: 11.04%;
+
+  display: none;
+  z-index: 100;
+}
+.cats:hover .hearth {
+  display: block;
+}
+.cats:hover {
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
 }
 /*Favorite Cats
 ********************/

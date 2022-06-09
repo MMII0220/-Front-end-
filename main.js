@@ -1,7 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
   const hearth__two = document.querySelectorAll('.hearth__two'),
-    hearth__three = document.querySelectorAll('.hearth__three');
+    hearth__three = document.querySelectorAll('.hearth__three'),
+        link = document.querySelectorAll('.link');
 
+  /* let a, b;
+
+  localStorage.setItem('a', hearth__two[0]);
+
+  a = localStorage.getItem('a');
+
+  console.log(a); */
+  
   const click__hearth = () => {
     /*Clicked Hearth
      ********************/

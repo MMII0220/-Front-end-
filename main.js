@@ -1,26 +1,33 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const hearth = document.querySelectorAll('.hearth'),
-    hearth__two = document.querySelectorAll('.hearth__two');
+  const hearth__two = document.querySelectorAll('.hearth__two'),
+    hearth__three = document.querySelectorAll('.hearth__three');
 
-  /*Hover Сердца
-   ******************/
-  hearth.forEach((item, i) => {
-    item.addEventListener('mouseover', (ev) => {
-      /* const e = ev.target; */
-      hearth__two[i].style.display = 'block';
-      hearth__two[i].classList.add('hearth__two');
-      /* hearth.classList.add('hearth'); */
-      /* hearth__two.style.display = 'block'; */
-      /* e.style.display = 'none'; */
+  const click__hearth = () => {
+    /*Clicked Hearth
+     ********************/
+    hearth__two.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        if (hearth__three[i].classList.contains != 'hide') {
+          hearth__three[i].classList.remove('hide');
+          hearth__three[i].classList.add('show');
+        }
+      });
     });
-  });
-  hearth__two.forEach((item, i) => {
-    item.addEventListener('mouseout', (ev) => {
-      const e = ev.target;
+  };
 
-      hearth[i].classList.add('hearth');
-      e.classList.remove('item');
-      e.style.display = 'none';
+  /* Remove Click Effect
+   ***********************/
+  const unclick__hearth = () => {
+    hearth__three.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        if (hearth__three[i].classList.contains != 'show') {
+          hearth__three[i].classList.remove('show');
+          hearth__three[i].classList.add('hide');
+        }
+      });
     });
-  });
+  };
+
+  click__hearth();
+  unclick__hearth();
 });

@@ -45,9 +45,11 @@
 ********************/
 .cats__collection {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 255px);
-  gap: 48px;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
   justify-content: center;
+
+  margin-right: 40px;
 }
 .cats {
   position: relative;
@@ -83,15 +85,42 @@
   top: 77.5%;
   bottom: 11.04%;
 
-  display: none;
   z-index: 100;
+  transition: 0.2s linear;
+  width: 40px;
+  height: 37px;
+}
+.hearth__three {
+  position: absolute;
+  left: 76.33%;
+  right: 8.33%;
+  top: 77.5%;
+  bottom: 11.04%;
+  transition: 0.2s linear;
+  display: none;
+  z-index: 200;
+  /* position: absolute;
+  left: -1.67%;
+  right: 8.33%;
+  top: 0;
+  bottom: 11.04%;
+  transition: 0.2s linear;
+  display: none;
+  z-index: 200; */
+}
+
+.cats:hover {
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
 }
 .cats:hover .hearth {
   display: block;
 }
-.cats:hover {
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+.hearth__two:hover {
+  background-image: url('./assets/icon/Vector\ \(1\).png');
 }
+/* .hearth__two:hover .hearth__three {
+  display: block;
+} */
 /*Favorite Cats
 ********************/
 
@@ -105,4 +134,11 @@
   text-align: center;
   font-size: 14px;
   line-height: 150%;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }

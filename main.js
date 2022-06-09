@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const hearth__two = document.querySelectorAll('.hearth__two'),
+  const cats = document.querySelectorAll('.cats'),
+    hearth__two = document.querySelectorAll('.hearth__two'),
     hearth__three = document.querySelectorAll('.hearth__three'),
-        link = document.querySelectorAll('.link');
+    link = document.querySelectorAll('.link'),
+    arr = [];
 
   /* let a, b;
 
@@ -10,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   a = localStorage.getItem('a');
 
   console.log(a); */
-  
+
   const click__hearth = () => {
     /*Clicked Hearth
      ********************/
@@ -39,4 +41,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   click__hearth();
   unclick__hearth();
+
+  /* Add Cats to Favorite
+   *************************/
+  link[1].addEventListener('click', () => {
+    hearth__three.forEach((item, i) => {
+      if (item.classList.contains != 'hide') {
+        arr.push(cats[i]);
+      }
+    });
+  });
 });

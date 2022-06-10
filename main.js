@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if (hearth__three[i].classList.contains != 'hide') {
           hearth__three[i].classList.remove('hide');
           hearth__three[i].classList.add('show');
+
+          arr.push(hearth__three[i].parentNode);
         }
       });
     });
@@ -46,9 +48,23 @@ window.addEventListener('DOMContentLoaded', () => {
    *************************/
   link[1].addEventListener('click', () => {
     hearth__three.forEach((item, i) => {
-      if (item.classList.contains != 'hide') {
+      /* if (item.classList.contains != 'hide') {
         arr.push(cats[i]);
+      } */
+      if (item.classList.contains != 'show') {
+        item.parentNode.classList.remove('show');
+        item.parentNode.classList.add('hide');
       }
     });
+
+    arr.forEach((key) => {
+      key.append();
+      key.classList.remove('hide');
+      key.classList.add('show');
+    });
+
+    console.log(arr);
   });
+
+  /* console.log((hearth__three[0].parentNode.style.display = 'none')); */
 });

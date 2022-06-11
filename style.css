@@ -142,3 +142,6 @@
 .show {
   display: block;
 }
+.flex {
+  display: flex;
+}

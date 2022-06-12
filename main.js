@@ -1,15 +1,13 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const hearth__two = document.querySelectorAll('.hearth__two'),
+  const asd = document.querySelector('.cats__collection'),
+    hearth__two = document.querySelectorAll('.hearth__two'),
     hearth__three = document.querySelectorAll('.hearth__three'),
-    link = document.querySelectorAll('.link'),
-    arr = [];
+    link = document.querySelectorAll('.link');
 
-  let itemsArray = [],
-    item;
-
-  let stored = localStorage.getItem('items');
-
-  if (stored) ;
+  let arr = [],
+    itemsArray = [],
+    a,
+    b;
 
   /*Clicked Hearth
    ********************/
@@ -22,11 +20,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
           arr.push(hearth__three[i].parentNode);
 
-          item = itemsArray.push(hearth__three[i].parentNode);
+          itemsArray.push(hearth__three[i].parentNode);
 
-          localStorage.setItem('items', item);
+          localStorage.setItem('cats', itemsArray);
+          console.log(localStorage.getItem('cats'));
 
-          stored = localStorage.getItem('items');
+          localStorage.setItem('aaa', JSON.stringify(asd));
+
+          console.log(localStorage.getItem('aaa'));
+
+          /* itemsArray.push(hearth__three[i].parentNode);
+
+          localStorage.setItem('items', JSON.stringify(itemsArray));
+          console.log(localStorage.getItem('items'));
+          console.log(itemsArray); */
         }
       });
     });
@@ -57,6 +64,12 @@ window.addEventListener('DOMContentLoaded', () => {
       });
 
       arr.forEach((key) => {
+        key.append();
+        key.classList.remove('hide');
+        key.classList.add('flex');
+      });
+
+      itemsArray.forEach((key) => {
         key.append();
         key.classList.remove('hide');
         key.classList.add('flex');

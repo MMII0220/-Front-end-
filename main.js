@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const hearth = document.querySelectorAll('.hearth__three'),
-    link = document.querySelectorAll('.link'),
-    asd = document.querySelectorAll('.cats');
+  const link = document.querySelectorAll('.link');
 
   const catContainer = document.querySelector('.cats__collection');
 
@@ -14,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     {
       img: './assets/img/cat2.png',
       id: 2,
-      likedByMe: true,
+      likedByMe: false,
     },
     {
       img: './assets/img/cat3.png',
@@ -96,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       catContainer.appendChild(catItem);
 
-      favoriteCats(cat.likedByMe, cat, catItem);
+      favoriteCats(cat.likedByMe, catItem);
     });
   };
 
@@ -112,19 +110,18 @@ window.addEventListener('DOMContentLoaded', () => {
     setCats();
   };
 
-  const favoriteCats = (item, cat, block) => {
+  const favoriteCats = (item, block) => {
     /* Add Cats to Favorite
      ************************ */
-    if (!cat.likedByMe) console.log(cat.likedByMe);
     link[1].addEventListener('click', () => {
-      if (!cat.likedByMe) {
+      if (!item) {
         block.classList.remove('flex');
         block.classList.add('hide');
       }
     });
 
     link[0].addEventListener('click', () => {
-      if (!cat.likedByMe) {
+      if (!item) {
         block.classList.remove('hide');
         block.classList.add('flex');
       }

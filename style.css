@@ -97,16 +97,8 @@
   top: 77.5%;
   bottom: 11.04%;
   transition: 0.2s linear;
-  display: none;
+  /* display: none; */
   z-index: 200;
-  /* position: absolute;
-  left: -1.67%;
-  right: 8.33%;
-  top: 0;
-  bottom: 11.04%;
-  transition: 0.2s linear;
-  display: none;
-  z-index: 200; */
 }
 
 .cats:hover {
